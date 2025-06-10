@@ -1,0 +1,15 @@
+Accuracy: 0.9127
+
+              precision    recall  f1-score   support
+
+     fifties       1.00      0.80      0.89         5
+    fourties       0.95      0.93      0.94       100
+   seventies       0.98      0.99      0.98        94
+     sixties       0.00      0.00      0.00         1
+       teens       0.97      0.92      0.94        37
+    thirties       0.82      0.68      0.74        47
+    twenties       0.85      0.94      0.89       117
+
+    accuracy                           0.91       401
+   macro avg       0.80      0.75      0.77       401
+weighted avg       0.91      0.91      0.91       401
