@@ -5,6 +5,7 @@ import numpy as np
 import librosa
 from os.path import join
 import argparse
+import parselmouth
 
 # Argument parsing
 parser = argparse.ArgumentParser(description="Extract features from Mozilla Common Voice audio files.")
@@ -29,7 +30,31 @@ def get_gender(df, path):
     gender_value = gender_row.iloc[0]['gender']
     return 0 if gender_value == 'male' else 1 if gender_value == 'female' else -1
 
-import parselmouth
+
+# Filter the Age of the data
+# Load metadata TSV
+tsv_path = join(DATA_DIR, "validated.tsv")
+df = pd.read_csv(tsv_path, sep="\t")
+
+# Convert age to numeric (if it's not already) and filter
+df['age'] = pd.to_numeric(df['age'], errors='coerce')
+df = df[df['age'].between(18, 80)]
+
+# Drop rows with missing paths just in case
+df = df.dropna(subset=['path'])
+
+# Loop through filtered files
+feature_list = []
+for idx, row in df.iterrows():
+    file_path = join(AUDIO_DIR, row['path'])
+    try:
+        features = feature_extraction(file_path, df)
+        feature_list.append([row['path']] + features.tolist())
+    except Exception as e:
+        print(f"Error processing {file_path}: {e}")
+
+
+
 
 def feature_extraction(path, df, sampling_rate=48000):
     features = []
