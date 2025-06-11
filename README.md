@@ -73,6 +73,12 @@ Voice features such as:
 - Spectral Bandwidth
 - Root Mean Square Energy
 - And others
+- Fundamental frequency (F0)
+- Formants (F1, F2)
+- Jitter
+- Shimmer
+- Spectral Tilt
+- Speech Rate
 
 Feature extraction is handled by `scripts/extract_voice_features.py`.
 
