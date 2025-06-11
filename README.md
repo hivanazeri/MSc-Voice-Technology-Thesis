@@ -34,6 +34,11 @@ pip install -r scripts/requirements.txt
 
 ## Running the Model
 
+### Extract features 
+'''bash
+python scripts/extract_voice_features.py --input_dir data/clips --output_csv data/features.csv
+'''
+
 ### Train the Model
 
 ```bash
@@ -67,18 +72,11 @@ This will:
 
 ## Features Used
 
-Voice features such as:
-- MFCCs
-- Zero-Crossing Rate
-- Spectral Bandwidth
-- Root Mean Square Energy
-- Fundamental frequency (F0)
-- Formants (F1, F2)
-- Jitter
-- Shimmer
-- Spectral Tilt
-- Speech Rate
-- And others
+- MFCCs, Zero-Crossing Rate, Spectral Bandwidth, RMS Energy
+  
+- Fundamental frequency (F0), Formants (F1, F2)
+
+- Jitter, Shimmer, Spectral Tilt, Speech Rate
 
 Feature extraction is handled by `scripts/extract_voice_features.py`.
 
