@@ -43,9 +43,6 @@ def get_gender(df, path):
 
 # Filter the Age of the data
 # Load metadata TSV
-df = df.dropna()  # drop rows with missing values
-
-
 tsv_path = join(DATA_DIR, "validated.tsv")
 df = pd.read_csv(tsv_path, sep="\t")
 
