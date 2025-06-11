@@ -1,6 +1,6 @@
 # Age Range Prediction from Voice
 
-This project predicts a speaker's age range based on their voice using machine learning techniques. It extracts acoustic features from audio and trains a Random Forest classifier to categorize age groups.
+This project predicts a speaker's age range based on their voice using machine learning techniques. It extracts acoustic features from human voice recordings and trains a Random Forest classifier to categorize age groups. By combining signal processing and machine learning, the project aims to identify vocal markers of aging.
 
 ## Project Structure
 
