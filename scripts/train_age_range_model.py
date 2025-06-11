@@ -93,3 +93,51 @@ if __name__ == "__main__":
 
     args = parser.parse_args() # Parse command-line arguments
     main(args) # Run main with the parsed arguments
+
+
+
+
+# To get Feature_importances.png
+
+# import matplotlib.pyplot as plt
+# import numpy as np
+# import os
+
+# def plot_selected_feature_importances(model, feature_names, output_dir):
+#     # Define the features you want to plot
+#     selected_features = ['formant2', 'formant1', 'mfcc1', 'mfcc2', 'mfcc3', 'mfcc4', 'mfcc5',
+#                          'speech rate', 'f0 mean', 'spectral tilt', 'shimmer', 'jitter']
+    
+#     # Get all feature importances from the model
+#     importances = model.feature_importances_
+    
+#     # Create a dictionary mapping feature_name -> importance
+#     feature_importance_dict = dict(zip(feature_names, importances))
+    
+#     # Filter only the selected features (and handle if any not found)
+#     filtered_features = []
+#     filtered_importances = []
+#     for feat in selected_features:
+#         if feat in feature_importance_dict:
+#             filtered_features.append(feat)
+#             filtered_importances.append(feature_importance_dict[feat])
+#         else:
+#             print(f"Warning: Feature '{feat}' not found in model features.")
+    
+#     # Sort selected features by importance descending
+#     sorted_idx = np.argsort(filtered_importances)[::-1]
+#     sorted_features = [filtered_features[i] for i in sorted_idx]
+#     sorted_importances = [filtered_importances[i] for i in sorted_idx]
+    
+#     # Plot
+#     plt.figure(figsize=(10, 6))
+#     plt.title("Selected Feature Importances")
+#     plt.bar(range(len(sorted_importances)), sorted_importances, align='center')
+#     plt.xticks(range(len(sorted_features)), sorted_features, rotation=45, ha='right')
+#     plt.tight_layout()
+    
+#     # Save the figure
+#     os.makedirs(output_dir, exist_ok=True)
+#     plt.savefig(os.path.join(output_dir, "selected_feature_importances.png"))
+#     plt.close()
+
