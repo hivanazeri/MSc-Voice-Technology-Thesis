@@ -141,3 +141,22 @@ if __name__ == "__main__":
 #     plt.savefig(os.path.join(output_dir, "selected_feature_importances.png"))
 #     plt.close()
 
+# To plot Confusion_matrix.png:
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+# import numpy as np
+# import os
+# from sklearn.metrics import confusion_matrix
+
+# def plot_confusion_matrix(y_true, y_pred, labels, output_path, title="Confusion Matrix"):
+#     cm = confusion_matrix(y_true, y_pred, labels=labels)
+#     plt.figure(figsize=(8, 6))
+#     sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
+#                 xticklabels=labels,
+#                 yticklabels=labels)
+#     plt.xlabel('Predicted')
+#     plt.ylabel('True')
+#     plt.title(title)
+#     plt.tight_layout()
+#     plt.savefig(output_path)
+#     plt.close()
